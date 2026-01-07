@@ -13,10 +13,10 @@ export default function ArchitectureSite() {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-7xl font-light tracking-wide"
         >
-          Arkkitehtitoimisto
+          AP ARK&Tech
         </motion.h1>
         <p className="mt-6 max-w-xl text-neutral-400">
-          Ajattomia, kestäviä ja harkittuja tiloja nykyaikaiseen elämään.
+          Ajattomia ja teknisesti edistyneitä arkkitehtuuriratkaisuja.
         </p>
         <Button className="mt-10">Tutustu töihin</Button>
       </section>
@@ -48,8 +48,8 @@ export default function ArchitectureSite() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-light mb-6">Tietoa meistä</h2>
           <p className="text-neutral-400 leading-relaxed">
-            Olemme arkkitehtitoimisto, joka keskittyy laadukkaaseen
-            suunnitteluun, kestävyyteen ja selkeään estetiikkaan.
+           AP ARK&Tech on arkkitehtuuri- ja teknologiapainotteinen
+toimisto, joka yhdistää modernin suunnittelun ja toimivat ratkaisut.
           </p>
         </div>
       </section>
@@ -57,8 +57,9 @@ export default function ArchitectureSite() {
       {/* Yhteystiedot */}
       <footer className="py-16 px-8 text-center text-neutral-500">
         <p>© 2026 Arkkitehtitoimisto</p>
-        <p className="mt-2">info@arkkitehti.fi</p>
+        <p className="mt-2">ArniP.tmi@outlook.com</p>
       </footer>
     </div>
   );
 }
+Päivitetty yrityksen tiedot
