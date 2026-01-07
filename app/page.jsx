@@ -8,3 +8,4 @@ ap-arktech-site/       ← pääkansio (root)
 ├─ package.json
 └─ README.md
 Lisätty page.jsx pääsivuksi
+Nimetty page.jsx oikein
