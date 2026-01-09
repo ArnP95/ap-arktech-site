@@ -36,17 +36,24 @@
 
 <section>
   <div class="projects">
-    <!-- Projekti 1 -->
+    <!-- Projekti 1 – vain pääkuva -->
     <div class="project" onclick="openGallery('projekti1')">
       <img src="images/projekti1-1.jpg" alt="Projekti 1">
     </div>
-    <!-- Projekti 2 -->
+
+    <!-- Projekti 2 – pääkuva + 1 kuva lightboxissa -->
     <div class="project" onclick="openGallery('projekti2')">
       <img src="images/projekti2-1.jpg" alt="Projekti 2">
     </div>
-    <!-- Projekti 3 -->
+
+    <!-- Projekti 3 – pääkuva + 3 kuvaa lightboxissa -->
     <div class="project" onclick="openGallery('projekti3')">
       <img src="images/projekti3-1.jpg" alt="Projekti 3">
+    </div>
+
+    <!-- Projekti 4 – pääkuva + 4 kuvaa lightboxissa (voi lisätä myöhemmin) -->
+    <div class="project" onclick="openGallery('projekti4')">
+      <img src="images/projekti4-1.jpg" alt="Projekti 4">
     </div>
   </div>
 </section>
@@ -65,9 +72,7 @@
 <script>
 const galleries = {
   projekti1: [
-    "images/projekti1-1.jpg",
-    "images/projekti1-2.jpg",
-    "images/projekti1-3.jpg"
+    "images/projekti1-1.jpg"
   ],
   projekti2: [
     "images/projekti2-1.jpg",
@@ -75,7 +80,15 @@ const galleries = {
   ],
   projekti3: [
     "images/projekti3-1.jpg",
-    "images/projekti3-2.jpg"
+    "images/projekti3-2.jpg",
+    "images/projekti3-3.jpg",
+    "images/projekti3-4.jpg"
+  ],
+  projekti4: [
+    "images/projekti4-1.jpg",
+    "images/projekti4-2.jpg",
+    "images/projekti4-3.jpg",
+    "images/projekti4-4.jpg"
   ]
 };
 
@@ -103,4 +116,3 @@ function closeGallery() {
 
 </body>
 </html>
-
