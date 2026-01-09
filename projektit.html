@@ -45,16 +45,15 @@
       cursor:pointer;
     }
 
-    /* Lightbox */
+    /* Lightbox - PIILOSSA ALUKSI */
     #lightbox {
-      display:none;
+      display:none; /* <- tärkeää, ei näy automaattisesti */
       position:fixed;
       top:0;
       left:0;
       width:100%;
       height:100%;
       background:rgba(0,0,0,0.9);
-      display:flex;
       flex-direction:column;
       justify-content:center;
       align-items:center;
@@ -118,10 +117,9 @@
     </div>
 
     <!-- Projekti 3 -->
-   <div class="project" onclick="openGallery('projekti3')">
-    <img src="images/projekti3-main.jpg" alt="Projekti 3">
+    <div class="project" onclick="openGallery('projekti3')">
+      <img src="images/projekti3-main.jpg" alt="Projekti 3">
     </div>
-
 
     <!-- Projekti 4 -->
     <div class="project" onclick="openGallery('projekti4')">
@@ -163,17 +161,17 @@ const galleries = {
     "images/projekti4-2.jpg",
     "images/projekti4-3.jpg",
     "images/projekti4-4.jpg",
-    "images/projekti4-5.jpg",
-    "images/projekti4-6.jpg"
+    "images/projekti4-5.jpg"
   ]
 };
 
+// LIGHTBOX AVAUTUU VAIN KLIKKAAJALLE
 function openGallery(project) {
   const lightbox = document.getElementById('lightbox');
   const mainImg = document.getElementById('lightbox-img');
   const thumbs = document.getElementById('gallery-thumbnails');
 
-  lightbox.style.display = 'flex';
+  lightbox.style.display = 'flex'; // nyt näkyy vain klikattaessa
   mainImg.src = galleries[project][0];
   thumbs.innerHTML = '';
 
@@ -185,6 +183,7 @@ function openGallery(project) {
   });
 }
 
+// SULKEE LIGHTBOXIN
 function closeGallery() {
   document.getElementById('lightbox').style.display = 'none';
 }
@@ -192,3 +191,4 @@ function closeGallery() {
 
 </body>
 </html>
+
