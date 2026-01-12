@@ -28,6 +28,12 @@
       font-weight:300;
       letter-spacing:1px;
     }
+    h2 {
+      font-size:1.5rem;
+      font-weight:300;
+      color:#bdbdbd;
+      margin-top:10px;
+    }
     section {
       padding:40px 20px;
       max-width:1000px;
@@ -45,16 +51,15 @@
       cursor:pointer;
     }
 
-    /* Lightbox */
+    /* Lightbox - PIILOSSA ALUKSI */
     #lightbox {
-      display:none;
+      display:none; /* <- tärkeää, ei näy automaattisesti */
       position:fixed;
       top:0;
       left:0;
       width:100%;
       height:100%;
       background:rgba(0,0,0,0.9);
-      display:flex;
       flex-direction:column;
       justify-content:center;
       align-items:center;
@@ -101,7 +106,10 @@
   </nav>
 
   <h1>Portfolio</h1>
-  <p>Valikoituja projekteja ja toteutuksia.</p>
+  <h2>Pintaraapaisu projekteistani</h2>
+  <p style="max-width:600px; margin:auto; color:#bdbdbd;">
+    Osa luonnoksina, osa toteutuneina töinä.
+  </p>
 </header>
 
 <section>
@@ -118,15 +126,19 @@
     </div>
 
     <!-- Projekti 3 -->
-   <div class="project" onclick="openGallery('projekti3')">
-    <img src="images/projekti3-main.jpg" alt="Projekti 3">
+    <div class="project" onclick="openGallery('projekti3')">
+      <img src="images/projekti3-main.jpg" alt="Projekti 3">
     </div>
-
 
     <!-- Projekti 4 -->
     <div class="project" onclick="openGallery('projekti4')">
       <img src="images/projekti4-main.jpg" alt="Projekti 4">
     </div>
+
+    <!-- Projekti 5 -->
+  <div class="project" onclick="openGallery('projekti5')">
+    <img src="images/projekti5-main.jpg" alt="Projekti 5">
+  </div>
 
   </div>
 </section>
@@ -163,17 +175,24 @@ const galleries = {
     "images/projekti4-2.jpg",
     "images/projekti4-3.jpg",
     "images/projekti4-4.jpg",
-    "images/projekti4-5.jpg",
-    "images/projekti4-6.jpg"
+    "images/projekti4-5.jpg"
   ]
+    projekti5: [
+    "images/projekti5-main.jpg",
+    "images/projekti5-1.jpg",
+    "images/projekti5-2.jpg",
+    "images/projekti5-3.jpg"
+  ]
+
 };
 
+// LIGHTBOX AVAUTUU VAIN KLIKKAAJALLE
 function openGallery(project) {
   const lightbox = document.getElementById('lightbox');
   const mainImg = document.getElementById('lightbox-img');
   const thumbs = document.getElementById('gallery-thumbnails');
 
-  lightbox.style.display = 'flex';
+  lightbox.style.display = 'flex'; // näkyy vain klikattaessa
   mainImg.src = galleries[project][0];
   thumbs.innerHTML = '';
 
@@ -185,6 +204,7 @@ function openGallery(project) {
   });
 }
 
+// SULKEE LIGHTBOXIN
 function closeGallery() {
   document.getElementById('lightbox').style.display = 'none';
 }
@@ -192,3 +212,4 @@ function closeGallery() {
 
 </body>
 </html>
+
