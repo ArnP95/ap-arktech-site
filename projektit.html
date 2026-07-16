@@ -2,8 +2,16 @@
 <html lang="fi">
 <head>
   <meta charset="UTF-8">
+
   <title>AP Arch & Tech – Portfolio</title>
+
+  <meta name="description" content="Tutustu AP Arch & Techin portfolioon. Esimerkkejä arkkitehtisuunnittelusta, rakennussuunnittelusta, CAD-suunnittelusta sekä teknisistä projekteista Kuopiossa ja koko Suomessa.">
+
+  <meta name="author" content="Arni Pentikäinen">
+  <meta name="robots" content="index, follow">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
       margin:0;
@@ -11,39 +19,47 @@
       background:#0f0f0f;
       color:#eaeaea;
     }
+
     nav a {
       color:#eaeaea;
       text-decoration:none;
       margin:0 10px;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     header {
       text-align:center;
       padding:40px;
     }
+
     h1 {
       font-size:2.5rem;
       font-weight:300;
       letter-spacing:1px;
     }
+
     h2 {
       font-size:1.5rem;
       font-weight:300;
       color:#bdbdbd;
       margin-top:10px;
     }
+
     section {
       padding:40px 20px;
       max-width:1000px;
       margin:auto;
     }
+
     .projects {
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:20px;
     }
+
     .project img {
       width:100%;
       height:auto;
@@ -51,9 +67,8 @@
       cursor:pointer;
     }
 
-    /* Lightbox - PIILOSSA ALUKSI */
     #lightbox {
-      display:none; /* <- tärkeää, ei näy automaattisesti */
+      display:none;
       position:fixed;
       top:0;
       left:0;
@@ -65,11 +80,13 @@
       align-items:center;
       z-index:1000;
     }
+
     #lightbox img {
       max-width:90%;
       max-height:80%;
       border-radius:8px;
     }
+
     #close {
       position:absolute;
       top:20px;
@@ -78,9 +95,11 @@
       color:white;
       cursor:pointer;
     }
+
     #gallery-thumbnails {
       margin-top:20px;
     }
+
     #gallery-thumbnails img {
       width:80px;
       margin:5px;
@@ -95,9 +114,11 @@
     }
   </style>
 </head>
+
 <body>
 
 <header>
+
   <nav>
     <a href="index.html">Etusivu</a> |
     <a href="palvelut.html">Palvelut</a> |
@@ -106,45 +127,49 @@
   </nav>
 
   <h1>Portfolio</h1>
+
   <h2>Esimerkkejä projekteistani</h2>
-<p style="max-width:600px; margin:auto; color:#bdbdbd;">
-  Tässä osiossa voit tutustua projekteihini – osa on vielä luonnosvaiheessa, ja osa on toteutunut. Mukana on niin arkkitehtuuri- kuin muovihitsauskohteita.
-</p>
+
+  <p style="max-width:700px; margin:auto; color:#bdbdbd; line-height:1.8;">
+    Portfolio esittelee AP Arch & Techin suunnitteluosaamista. Sivulla on esimerkkejä arkkitehti- ja rakennussuunnittelusta sekä muista teknisistä projekteista. Galleria täydentyy uusilla kohteilla sitä mukaa, kun uusia projekteja valmistuu.
+  </p>
 
 </header>
 
 <section>
+
+  <h2>Projektigalleria</h2>
+
+  <p style="color:#bdbdbd;">
+    Klikkaa kuvaa avataksesi projektin suurempana ja selataksesi siihen liittyviä kuvia.
+  </p>
+
   <div class="projects">
 
-    <!-- Projekti 1 -->
     <div class="project" onclick="openGallery('projekti1')">
-      <img src="images/projekti1-main.jpg" alt="Projekti 1">
+      <img src="images/projekti1-main.jpg" alt="Arkkitehtisuunnitteluprojekti 1">
     </div>
 
-    <!-- Projekti 2 -->
     <div class="project" onclick="openGallery('projekti2')">
-      <img src="images/projekti2-main.jpg" alt="Projekti 2">
+      <img src="images/projekti2-main.jpg" alt="Rakennussuunnitteluprojekti 2">
     </div>
 
-    <!-- Projekti 3 -->
     <div class="project" onclick="openGallery('projekti3')">
-      <img src="images/projekti3-main.jpg" alt="Projekti 3">
+      <img src="images/projekti3-main.jpg" alt="Suunnitteluprojekti 3">
     </div>
 
-    <!-- Projekti 4 -->
     <div class="project" onclick="openGallery('projekti4')">
-      <img src="images/projekti4-main.jpg" alt="Projekti 4">
+      <img src="images/projekti4-main.jpg" alt="Suunnitteluprojekti 4">
     </div>
 
-    <!-- Projekti 5 -->
-  <div class="project" onclick="openGallery('projekti5')">
-    <img src="images/projekti5-main.jpg" alt="Projekti 5">
-  </div>
+    <div class="project" onclick="openGallery('projekti5')">
+      <img src="images/projekti5-main.jpg" alt="Suunnitteluprojekti 5">
+    </div>
 
   </div>
+
 </section>
 
-<!-- Lightbox -->
 <div id="lightbox">
   <span id="close" onclick="closeGallery()">×</span>
   <img id="lightbox-img" src="">
@@ -178,22 +203,20 @@ const galleries = {
     "images/projekti4-4.jpg",
     "images/projekti4-5.jpg"
   ],
-    projekti5: [
+  projekti5: [
     "images/projekti5-main.jpg",
     "images/projekti5-1.jpg",
     "images/projekti5-2.jpg",
     "images/projekti5-3.jpg"
   ]
-
 };
 
-// LIGHTBOX AVAUTUU VAIN KLIKKAAJALLE
 function openGallery(project) {
   const lightbox = document.getElementById('lightbox');
   const mainImg = document.getElementById('lightbox-img');
   const thumbs = document.getElementById('gallery-thumbnails');
 
-  lightbox.style.display = 'flex'; // näkyy vain klikattaessa
+  lightbox.style.display = 'flex';
   mainImg.src = galleries[project][0];
   thumbs.innerHTML = '';
 
@@ -205,7 +228,6 @@ function openGallery(project) {
   });
 }
 
-// SULKEE LIGHTBOXIN
 function closeGallery() {
   document.getElementById('lightbox').style.display = 'none';
 }
@@ -213,4 +235,3 @@ function closeGallery() {
 
 </body>
 </html>
-
